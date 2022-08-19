@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface BookDao extends JpaRepository<BookVO, String> {
 
+
+
 }
