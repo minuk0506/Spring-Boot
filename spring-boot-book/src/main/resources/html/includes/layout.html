@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.org">
+<nav class="container-fluid bg-dark" th:fragment="nav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a th:href="@{/static}" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+            <a th:href="@{/book}" class="nav-link">도서정보</a>
+        </li>
+        <li class="nav-item" sec:authorize="!isAuthenticated()">
+            <a th:href="@{/html/user/login}" class="nav-link">로그인</a>
+        </li>
+        <li class="nav-item" sec:authorize="!isAuthenticated()">
+            <a th:href="@{/html/user/join}" class="nav-link">회원가입</a>
+        </li>
+
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+            <a th:href="@{/html/user/logout}" class="nav-link">로그아웃</a>
+        </li>
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+            <a th:href="@{/html/user/mypage}" class="nav-link">MyPage</a>
+        </li>
+        <li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+            <a th:href="@{/html/user/admin}" class="nav-link">관리자</a>
+        </li>
+    </ul>
+</nav>
+
+<footer class="container-fluid text-center bg-primary" th:fragment="footer">
+    <address>CopyRight &copy; minuk</address>
+</footer>
