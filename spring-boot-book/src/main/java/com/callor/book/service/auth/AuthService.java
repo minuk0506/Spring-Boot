@@ -1,4 +1,4 @@
-package com.callor.book.service;
+package com.callor.book.service.auth;
 
 import com.callor.book.model.UserVO;
 import org.springframework.security.core.GrantedAuthority;

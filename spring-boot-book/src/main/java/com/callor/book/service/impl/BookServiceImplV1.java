@@ -1,7 +1,8 @@
-package com.callor.book.service;
+package com.callor.book.service.impl;
 
 import com.callor.book.model.BookVO;
 import com.callor.book.persistance.BookDao;
+import com.callor.book.service.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class BookServiceImplV1 implements BookService{
+public class BookServiceImplV1 implements BookService {
 
     private final BookDao bookDao;
     public BookServiceImplV1(BookDao bookDao) {
