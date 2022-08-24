@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+//@ToString
 @Builder
 @Entity
 @Table(name="tbl_authorities")
@@ -39,4 +39,13 @@ public class UserRole {
     insertable = false,
     updatable = false)
     private UserVO userVO;
+
+    @Override
+    public String toString() {
+        return "UserRole{" +
+                "seq=" + seq +
+                ", username='" + username + '\'' +
+                ", rolename='" + rolename + '\'' +
+                '}';
+    }
 }

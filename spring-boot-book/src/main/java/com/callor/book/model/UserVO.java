@@ -7,12 +7,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
-
+/*
+설명주석 선생님 git에
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+// @OneToMany 와 충돌하여 lombok @ToString 사용하지 않는다
+//@ToString
 @Builder
 @Entity
 @Table(name="tbl_users")
@@ -75,4 +78,17 @@ public class UserVO implements UserDetails {
     @OneToMany(mappedBy = "userVO", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
     private Set<UserRole> userRoles;
 
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", accountNonExpired=" + accountNonExpired +
+                ", accountNonLocked=" + accountNonLocked +
+                ", credentialsNonExpired=" + credentialsNonExpired +
+                ", email='" + email + '\'' +
+                ", realname='" + realname + '\'' +
+                '}';
+    }
 }
